@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f0f0f" />
+  <meta name="description" content="Wizytówka kontaktowa Antoni Kuran – Conner" />
+  <title>Conner – Antoni Kuran</title>
+  <style>
+    :root{--bg:#0f0f0f;--card:#151515;--card2:#101010;--text:#fff;--muted:#aaa;--line:#2a2a2a;--accent:#e30016;--accent2:#b90012}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{min-height:100%}
+    body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top,#242424 0%,var(--bg) 42%,#050505 100%);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);padding:22px}
+    .page{width:min(100%,430px);display:flex;flex-direction:column;gap:18px;align-items:center}
+    .card{width:100%;max-width:380px;height:230px;perspective:1000px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+    .card.flipped .inner{transform:rotateY(180deg)}
+    .face{position:absolute;inset:0;border-radius:22px;backface-visibility:hidden;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.08)}
+    .front{background:linear-gradient(135deg,var(--card) 0%,var(--card2) 100%);padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+    .front:before{content:"";position:absolute;width:180px;height:180px;right:-70px;top:-80px;background:var(--accent);filter:blur(50px);opacity:.25}
+    .front:after{content:"";position:absolute;inset:auto 0 0 0;height:4px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.9}
+    .logo{position:relative;z-index:1;width:230px;max-width:82%;height:auto;display:block}
+    .person{position:relative;z-index:1}
+    .name{font-weight:800;font-size:1.26rem;letter-spacing:.01em}
+    .role{margin-top:4px;color:var(--muted);font-size:.86rem}
+    .hint{position:absolute;right:20px;bottom:16px;color:#777;font-size:.68rem}
+    .back{background:#fff;color:#151515;transform:rotateY(180deg);padding:26px;display:flex;flex-direction:column;justify-content:center;gap:13px}
+    .back h1{font-size:1.35rem;margin-bottom:2px}.back small{color:#6b6b6b;margin-bottom:4px;display:block}
+    .row{display:flex;align-items:center;gap:10px;color:#222;text-decoration:none;font-size:.9rem;line-height:1.25;word-break:break-word}.row:hover{color:var(--accent)}
+    .icon{width:18px;height:18px;flex:0 0 18px;color:var(--accent)}
+    .actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:#171717;color:#fff;text-decoration:none;font-size:.88rem;font-weight:650;transition:.2s}.actions a:hover{background:var(--accent);border-color:var(--accent)}.actions .primary{background:var(--accent);border-color:var(--accent)}.actions .primary:hover{background:var(--accent2);border-color:var(--accent2)}
+    .note{color:#777;font-size:.75rem;text-align:center;line-height:1.4}.note strong{color:#ddd;font-weight:600}
+    @media (max-width:380px){.card{height:218px}.front,.back{padding:22px}.logo{width:205px}.actions{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Wizytówka kontaktowa Conner">
+    <section class="card" id="card" role="button" tabindex="0" aria-label="Kliknij, aby odwrócić wizytówkę">
+      <div class="inner">
+        <div class="face front">
+          <img class="logo" src="logo-white.svg" alt="Conner" />
+          <div class="person">
+            <div class="name">Antoni Kuran</div>
+            <div class="role">Conner · kontakt biznesowy</div>
+          </div>
+          <div class="hint">kliknij, aby odwrócić</div>
+        </div>
+        <div class="face back">
+          <div>
+            <h1>Antoni Kuran</h1>
+            <small>Conner</small>
+          </div>
+          <a class="row" href="mailto:akuran@frameworkstudio.pl">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            akuran@frameworkstudio.pl
+          </a>
+          <a class="row" href="tel:+48575996200">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.49a1 1 0 01-.5 1.21l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.49 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>
+            +48 575 996 200
+          </a>
+          <a class="row" href="https://www.frameworkstudio.pl" target="_blank" rel="noopener">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg>
+            www.frameworkstudio.pl
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="actions" aria-label="Szybkie akcje kontaktowe">
+      <a class="primary" href="antoni-kuran.vcf" download>Dodaj kontakt</a>
+      <a href="tel:+48575996200">Zadzwoń</a>
+      <a href="mailto:akuran@frameworkstudio.pl">Napisz maila</a>
+      <a href="https://www.frameworkstudio.pl" target="_blank" rel="noopener">Strona WWW</a>
+    </nav>
+    <p class="note">Repozytorium jest gotowe pod <strong>GitHub Pages</strong>. Po publikacji wygeneruj QR do adresu strony.</p>
+  </main>
+  <script>
+    const card = document.getElementById('card');
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+    card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('flipped'); } });
+  </script>
+</body>
+</html>
